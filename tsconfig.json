@@ -11,6 +11,10 @@
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
     "noEmit": true,
+    "paths": {
+      "~/*": ["./resources/*"],
+       "@/*": ["./resources/js/*"],
+    }
   },
   "include": [
     "resources/js/**/*.ts",

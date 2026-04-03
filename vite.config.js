@@ -3,6 +3,7 @@ import laravel from 'laravel-vite-plugin';
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import inertia from '@inertiajs/vite';
+import path from 'node:path';
 
 export default defineConfig({
     plugins: [
@@ -18,5 +19,11 @@ export default defineConfig({
         watch: {
             ignored: ['**/storage/framework/views/**'],
         },
+    },
+    resolve: {
+      alias: {
+        '~': path.resolve(__dirname, './resources'),
+        '@': path.resolve(__dirname, './resources/js'),
+      },
     },
 });
