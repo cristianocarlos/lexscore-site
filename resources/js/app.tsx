@@ -1,5 +1,5 @@
 import '../css/app.css';
 
-import { createInertiaApp } from '@inertiajs/react'
+import {createInertiaApp} from '@inertiajs/react';
 
 createInertiaApp();
