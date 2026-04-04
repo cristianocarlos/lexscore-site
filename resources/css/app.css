@@ -8,4 +8,142 @@
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-family-form-input-error: Arial, Helvetica, sans-serif;
+    --color-cs-p: #004271; /* --color-scheme-primary */
+    --color-cs-p-950: #002d51; /* --color-scheme-primary-var-1 */
+    --color-cs-p-900: #004271; /* --color-scheme-primary */
+    --color-cs-p-800: #005794;
+    --color-cs-p-700: #0066b4; /* --color-scheme-primary-var-2 */
+    --color-cs-p-600: #0081df;
+    --color-cs-p-500: #00a3ff; /* --color-scheme-primary-var-3 */
+    --color-cs-p-400: #20bbff; /* --color-scheme-primary-var-4 */
+    --color-cs-p-300: #6dd2ff;
+    --color-cs-p-200: #b2e5ff;
+    --color-cs-p-100: #dcf1ff;
+    --color-cs-p-50: #eef8ff;
+
+    --color-cs-s: #c5ab71; /* --color-scheme-secondary */
+    --color-cs-s-950: #322418;
+    --color-cs-s-900: #5e4730;
+    --color-cs-s-800: #745538;
+    --color-cs-s-700: #8f693f;
+    --color-cs-s-600: #ac844a; /* --color-scheme-secondary-var-4 */
+    --color-cs-s-500: #b99756; /* --color-scheme-secondary-var-1 */
+    --color-cs-s-400: #c5ab71; /* --color-scheme-secondary */
+    --color-cs-s-300: #d6c79b; /* --color-scheme-secondary-var-3 */
+    --color-cs-s-200: #e6dec2;
+    --color-cs-s-100: #f3efe1;
+    --color-cs-s-50: #faf8f2;
+    --color-cs-s-legacy-var-2: #e6cb62;
+    --color-form-color-theme: #0066b4;
+}
+
+@utility z-combo-or-suggest-data-list {
+    z-index: 5
+}
+@utility z-dropdown {
+    z-index: 3
+}
+@utility z-feedback {
+    z-index: 8
+}
+@utility z-date-hour-picker {
+    z-index: 5
+}
+@utility z-menu {
+    z-index: 5
+}
+@utility z-header {
+    z-index: 6
+}
+@utility z-modal {
+    z-index: 7
+}
+@utility z-prepend-and-append {
+    z-index: 1
+}
+@utility z-table-head-sticky {
+    z-index: 2
+}
+@utility size-1em {
+    height: 1em;
+    width: 1em
+}
+
+@utility agg--form-transition-all {
+    @apply transition-all ease-in-out duration-200;
+}
+
+@utility agg--form-row {
+    @apply flex gap-2 max-sm:flex-wrap max-sm:gap-0 [&>div]:flex-1 max-sm:[&>div]:basis-full;
+}
+
+@utility agg--form-input-label {
+    @apply block;
+    @apply mb-0.5;
+    @apply text-xs;
+    @apply leading-none;
+    @apply font-semibold;
+    @apply text-gray-500;
+    @apply after:content-['.']; /* pra label vazia blocar igual */
+    @apply after:text-transparent;
+}
+
+@utility agg--form-emulate-label {
+  @apply before:content-['.'];
+  @apply before:block;
+  @apply before:mb-0.5;
+  @apply before:text-xs;
+  @apply before:leading-none;
+  @apply before:text-transparent;
+  @apply max-sm:before:content-[''];
+}
+
+@utility agg--form-emulate-input {
+    @apply inline-flex items-center h-[38px];
+    @apply max-sm:h-auto;
+}
+
+/** */
+
+@utility agg--layout-canvas-width {
+  @apply m-auto max-w-7xl px-4 md:px-8;
+}
+
+@utility agg--bg-gradient {
+  @apply bg-linear-to-r from-cs-p to-cs-p-700;
+}
+
+@utility agg--button-primary {
+    @apply text-white bg-linear-to-r from-cs-p-700 via-cs-p-800 to-cs-p-900 hover:bg-linear-to-br focus:ring-4 focus:outline-none focus:ring-cs-p-500 dark:focus:ring-cs-p-600 font-medium rounded-lg text-sm px-4 py-2.5 text-center leading-5;
+}
+
+@utility agg--message-smooth {
+    @apply text-gray-400;
+}
+
+@utility agg--message-warning {
+    @apply rounded border border-yellow-200 bg-yellow-100 p-4 text-yellow-800;
+}
+
+@utility agg--message-info {
+    @apply rounded border border-blue-200 bg-blue-100 p-4 text-blue-800;
+}
+
+@utility agg--force-w-screen {
+  @apply right-1/2 left-1/2 -mx-[50vw] w-screen max-w-none;
+}
+
+/** */
+
+body {
+    @apply bg-indigo-50;
+}
+
+a {
+    @apply text-blue-500 hover:text-indigo-300;
+}
+
+button {
+    @apply cursor-pointer text-left;
 }

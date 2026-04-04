@@ -1,0 +1,76 @@
+@reference "~/css/app.css";
+
+.mf__formigo__input-and-textarea .input {
+    @apply relative;
+}
+
+.mf__formigo__input-and-textarea .input > input,
+.mf__formigo__input-and-textarea .input > textarea,
+.mf__formigo__input-and-textarea .input .gui-tag-suggest,
+.mf__formigo__input-and-textarea .input .gui-draft-js-text-area {
+    @apply agg--form-transition-all size-full rounded-sm border border-solid border-gray-300 bg-white outline-0;
+}
+
+.mf__formigo__input-and-textarea .input .gui-draft-js-text-area {
+    @apply rounded-tl-none rounded-tr-none border-t-transparent;
+}
+
+/**
+ * Disabled/ReadOnly
+ */
+.mf__formigo__input-and-textarea .input > input[disabled],
+.mf__formigo__input-and-textarea .input > textarea[disabled],
+.mf__formigo__input-and-textarea .input .gui-tag-suggest.disabled,
+.mf__formigo__input-and-textarea .input .gui-draft-js-text-area.disabled {
+    @apply bg-gray-100 opacity-70 select-none;
+}
+
+.mf__formigo__input-and-textarea .input > input[disabled] ~ *,
+.mf__formigo__input-and-textarea .input > textarea[disabled] ~ * {
+    @apply opacity-70;
+}
+
+.mf__formigo__input-and-textarea .input > input[readonly],
+.mf__formigo__input-and-textarea .input > textarea[readonly],
+.mf__formigo__input-and-textarea .input .gui-tag-suggest.readonly,
+.mf__formigo__input-and-textarea .input .gui-draft-js-text-area.readonly {
+    @apply bg-gray-50 opacity-70 select-none;
+}
+
+/**
+ * Focus
+ */
+.mf__formigo__input-and-textarea .input > input:focus,
+.mf__formigo__input-and-textarea .input > textarea:focus,
+.mf__formigo__input-and-textarea .input .gui-tag-suggest.has-focus {
+    @apply border-form-color-theme;
+}
+
+.mf__formigo__input-and-textarea .input .gui-draft-js-text-area.has-focus {
+    @apply border-t-gray-100;
+}
+
+.mf__formigo__input-and-textarea .input > input:focus ~ .prepend,
+.mf__formigo__input-and-textarea .input > textarea:focus ~ .prepend {
+    @apply text-form-color-theme;
+}
+
+/**
+ * Somente textarea
+ */
+.mf__formigo__input-and-textarea.text-area .input > textarea {
+    @apply max-h-96 min-h-24 resize-none;
+}
+
+.mf__formigo__input-and-textarea.text-area .input > .prepend,
+.mf__formigo__input-and-textarea.draft-js-text-area .input > .prepend {
+    @apply items-start;
+}
+
+.mf__formigo__input-and-textarea.draft-js-text-area.min-height-200-px .RichEditor-editor .public-DraftEditor-content {
+    @apply min-h-52;
+}
+
+.mf__formigo__input-and-textarea.draft-js-text-area.min-height-400-px .RichEditor-editor .public-DraftEditor-content {
+    @apply min-h-96;
+}

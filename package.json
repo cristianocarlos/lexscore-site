@@ -3,6 +3,9 @@
     "private": true,
     "type": "module",
     "scripts": {
+        "pifix": "./vendor/bin/pint",
+        "phpgen": "php artisan yii:gen; php artisan types:gen",
+        "routegen": "php artisan route-enum:gen",
         "lifix": "npm run lint -- --fix",
         "lint": "npx eslint resources/js",
         "prfix": "npm run prettier -- --write",
@@ -14,10 +17,12 @@
     "devDependencies": {
         "@eslint/js": "^10.0.1",
         "@tailwindcss/vite": "^4.0.0",
+        "@types/gtag.js": "^0.0.20",
         "@types/react": "^19.2.14",
         "@types/react-dom": "^19.2.3",
         "axios": ">=1.11.0 <=1.14.0",
         "concurrently": "^9.0.1",
+        "deep-object-diff": "^1.1.9",
         "eslint": "^9.39.4",
         "eslint-config-prettier": "^10.1.8",
         "eslint-plugin-import": "^2.32.0",
@@ -36,7 +41,12 @@
         "@inertiajs/react": "^3.0.2",
         "@inertiajs/vite": "^3.0.2",
         "@vitejs/plugin-react": "^6.0.1",
+        "es-toolkit": "^1.45.1",
+        "immer": "^11.1.4",
+        "luxon": "^3.7.2",
         "react": "^19.2.4",
-        "react-dom": "^19.2.4"
+        "react-dom": "^19.2.4",
+        "reselect": "^5.1.1",
+        "zustand": "^5.0.12"
     }
 }

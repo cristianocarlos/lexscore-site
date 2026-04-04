@@ -1,0 +1,185 @@
+@reference "~/css/app.css";
+
+.mf__formigo__check-and-radio.check-and-radio .option > .checkable {
+    @apply [&_input[disabled]~label]:opacity-60;
+    @apply [&_input[disabled]~label]:cursor-not-allowed;
+}
+
+.mf__formigo__check-and-radio .option {
+    @apply leading-0;
+}
+
+.mf__formigo__check-and-radio:not(.inline-option, .filled-option) .option + .option {
+    @apply mt-1;
+}
+
+.mf__formigo__check-and-radio .option > .checkable {
+    @apply inline-flex items-center gap-2;
+    /* white-space: nowrap; oras nowrap.. nunca mais faça isso seu idiota */
+    @apply relative;
+    /* ".mf__formigo__check-and-radio .option input" é absolute. Precisa do relative
+    Isso dava problema na tela de atendimento */
+}
+
+/*
+ * Custom check/radio
+ */
+.mf__formigo__check-and-radio .option > .checkable input {
+    @apply absolute -z-1 opacity-0;
+}
+
+.mf__formigo__check-and-radio .option > .checkable input:focus + .custom::before {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+}
+
+.mf__formigo__check-and-radio .option > .checkable .custom {
+    @apply relative h-4;
+    @apply w-4; /* width garante a largura fisica do elemento, caso contrário o grid só considera a largura do label */
+    flex: 0 0 16px; /* flex para o marcador não ser invadido pelo texto, quando muito longo */
+    @apply after:content-[''];
+    @apply after:absolute;
+    @apply before:content-[''];
+    @apply before:absolute;
+    @apply before:border;
+    @apply before:border-solid;
+    @apply before:border-gray-300;
+    @apply before:h-4;
+    @apply before:w-4;
+    @apply before:left-0; /* precisa pq se tiver um text-align: right no elemento pai fode tudo */
+}
+
+.mf__formigo__check-and-radio .option > .checkable input + .custom {
+    @apply after:content-none;
+}
+
+.mf__formigo__check-and-radio .option > .checkable input:checked + .custom {
+    @apply before:border-form-color-theme;
+}
+
+.mf__formigo__check-and-radio .option > .checkable input:checked + .custom {
+    @apply after:content-[''];
+}
+
+.mf__formigo__check-and-radio .option .checkable .option-label {
+    line-height: 1.08em;
+}
+
+/*
+ * Custom check/radio especificos de cada um
+ */
+.mf__formigo__check-and-radio.check .option > .checkable .custom,
+.mf__formigo__check-and-radio.check-group .option > .checkable .custom,
+.mf__formigo__check-and-radio.check-table .option > .checkable .custom {
+    @apply before:rounded-xs;
+}
+
+.mf__formigo__check-and-radio.radio-group .option > .checkable .custom,
+.mf__formigo__check-and-radio.radio-table .option > .checkable .custom {
+    @apply before:rounded-full;
+}
+
+.mf__formigo__check-and-radio.check .option > .checkable .custom::after,
+.mf__formigo__check-and-radio.check-group .option > .checkable .custom::after,
+.mf__formigo__check-and-radio.check-table .option > .checkable .custom::after {
+    border-bottom: 2px solid white;
+    border-left: 2px solid white;
+    height: 6px;
+    left: 3px;
+    top: 4px;
+    transform: rotate(-50deg);
+    width: 10px;
+}
+
+.mf__formigo__check-and-radio.radio-group .option > .checkable .custom,
+.mf__formigo__check-and-radio.radio-table .option > .checkable .custom {
+    @apply after:bg-form-color-theme;
+    @apply after:rounded-full;
+    @apply after:h-2;
+    @apply after:left-1;
+    @apply after:top-1;
+    @apply after:w-2;
+}
+
+.mf__formigo__check-and-radio.check .option > .checkable input:checked + .custom,
+.mf__formigo__check-and-radio.check-group .option > .checkable input:checked + .custom,
+.mf__formigo__check-and-radio.check-table .option > .checkable input:checked + .custom {
+    @apply before:bg-form-color-theme;
+}
+
+.mf__formigo__check-and-radio .option > .form-element.date-input,
+.mf__formigo__check-and-radio .option > .form-element.float-input,
+.mf__formigo__check-and-radio .option > .form-element.integer-input {
+    @apply w-44;
+}
+
+.mf__formigo__check-and-radio .option .form-element.currency-input {
+    @apply w-60;
+}
+
+/**
+ * inline
+ */
+
+.mf__formigo__check-and-radio.inline-option > .option-list {
+    @apply flex flex-wrap gap-x-4 gap-y-2;
+}
+
+/**
+ * filled
+ */
+.mf__formigo__check-and-radio.filled-option > .option-list {
+    @apply flex flex-wrap gap-2 text-[0.8em];
+}
+
+.mf__formigo__check-and-radio.filled-option .option .checkable .custom {
+    @apply hidden;
+}
+
+.mf__formigo__check-and-radio.filled-option .option .checkable .option-label {
+    @apply cursor-pointer rounded-sm border border-gray-300 px-1 leading-tight text-gray-500;
+}
+
+.mf__formigo__check-and-radio.filled-option .option .checkable {
+    @apply [&_input:checked~.option-label]:bg-form-color-theme;
+    @apply [&_input:checked~.option-label]:border-transparent;
+    @apply [&_input:checked~.option-label]:text-white;
+    @apply [&_input[disabled]~.option-label]:opacity-90;
+    @apply [&_input[disabled]~.option-label]:grayscale-40;
+}
+
+/**
+ * complementary
+ */
+
+.mf__formigo__check-and-radio .option > .form-element {
+    @apply mb-1 ml-6;
+}
+
+/**
+ * print mode
+ */
+
+.mf__formigo__check-and-radio .option.print-mode > .checkable input[disabled] ~ label {
+    opacity: 1;
+}
+
+.mf__formigo__check-and-radio .option.print-mode > .checkable .custom {
+    filter: grayscale(1) opacity(0.7);
+}
+
+/**
+  * o navegador n consegue mostrar o checkable custom, então mostro o padrão de novo pro navegador se comportar normalmente
+ */
+@media print {
+    .mf__formigo__check-and-radio .option > .checkable input {
+        opacity: 1;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .mf__formigo__check-and-radio .option > .checkable .custom {
+        opacity: 0;
+        position: relative;
+        z-index: -1;
+    }
+}

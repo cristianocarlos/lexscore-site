@@ -1,0 +1,13 @@
+export const ARROW_DOWN = 40;
+export const ARROW_UP = 38;
+export const BACKSPACE = 8;
+export const COMMA = 188;
+export const DEAD_KEY = 229;
+export const DELETE = 8;
+export const ENTER = 13;
+export const ESC = 27;
+export const SPACE_BAR = 32;
+export const TAB = 9;
+export const V = 86;
+export const C = 67;
+export const A = 65;

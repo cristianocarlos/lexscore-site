@@ -1,0 +1,42 @@
+@reference "~/css/app.css";
+
+.mf__formigo__combo-or-suggest.has-empty-id .input > input {
+    @apply text-red-400;
+}
+
+/**
+ * Disabled/ReadOnly
+ */
+.mf__formigo__combo-or-suggest .input > input[disabled] {
+    @apply bg-gray-100 opacity-70 select-none;
+}
+
+.mf__formigo__combo-or-suggest .input > input[disabled] ~ * {
+    @apply opacity-70;
+}
+
+.mf__formigo__combo-or-suggest .input > input[aria-readonly='true'],
+.mf__formigo__combo-or-suggest .input > input[aria-readonly='true'] ~ [data-screen-id],
+.mf__formigo__combo-or-suggest .input > input[aria-readonly='true'] ~ .append {
+    /* não da pra usar o readonly por causa do preventSearch */
+    @apply bg-gray-50 opacity-70 select-none;
+}
+
+/**
+ * Focus
+ */
+.mf__formigo__combo-or-suggest .input > input:focus {
+    @apply border-form-color-theme;
+}
+
+.mf__formigo__combo-or-suggest .input > input:focus ~ .prepend {
+    @apply text-form-color-theme;
+}
+
+.mf__formigo__combo-or-suggest .input .append {
+    @apply justify-end;
+}
+
+.mf__formigo__combo-or-suggest .input .append .mf__x-icon-button {
+    @apply mr-1 text-xs;
+}

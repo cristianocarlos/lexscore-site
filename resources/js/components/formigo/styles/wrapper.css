@@ -1,0 +1,56 @@
+@reference "~/css/app.css";
+
+/**
+ * Error
+ */
+.mf__formigo__wrapper {
+    @apply relative max-sm:[zoom:1.12];
+}
+
+.mf__formigo__wrapper.has-error > em,
+.mf__formigo__wrapper .has-inner-error > em {
+    @apply font-family-form-input-error absolute text-xs leading-none text-yellow-500 not-italic;
+}
+
+.mf__formigo__wrapper.has-error input,
+.mf__formigo__wrapper.has-error textarea,
+.mf__formigo__wrapper.has-error .gui-tag-suggest {
+    @apply border-yellow-500! bg-yellow-50!;
+}
+
+.mf__formigo__wrapper .date-hour-picker {
+    @apply max-sm:[zoom:0.96];
+}
+
+.mf__formigo__wrapper.has-error .gui-draft-js-text-area {
+    @apply bg-yellow-50!;
+    /* deliberadamente sem bordas no error e no focus */
+}
+
+.mf__formigo__wrapper.has-error .RichEditor-toolbar {
+    /* deliberadamente sem bordas no error e no focus */
+}
+
+.mf__formigo__wrapper.has-error .input > input ~ .prepend,
+.mf__formigo__wrapper.has-error .input > textarea ~ .prepend {
+    @apply text-yellow-500;
+}
+
+.mf__formigo__wrapper.has-error .input > input ~ .append {
+    @apply bg-transparent;
+}
+
+.mf__formigo__wrapper.has-error.combo-or-suggest [role='combobox'] ~ [data-screen-id],
+.mf__formigo__wrapper.has-error.combo-or-suggest [role='combobox'] {
+    @apply bg-linear-to-b from-yellow-50 to-yellow-100;
+}
+
+.mf__formigo__wrapper.has-error.check-table table,
+.mf__formigo__wrapper.has-error.radio-table table {
+    @apply bg-yellow-50!;
+}
+
+.mf__formigo__wrapper.has-error.check-group .option,
+.mf__formigo__wrapper.has-error.radio-group .option {
+    @apply rounded-sm bg-yellow-50!;
+}

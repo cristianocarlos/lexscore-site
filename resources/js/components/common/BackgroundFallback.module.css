@@ -1,0 +1,20 @@
+@keyframes backgroundFallback {
+    0% {
+        background-position: -468px 0;
+    }
+    100% {
+        background-position: 468px 0;
+    }
+}
+
+:local(.wrapper) {
+    animation-duration: 1.25s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: backgroundFallback;
+    animation-timing-function: linear;
+    background: darkgray;
+    background: linear-gradient(to right, #fcfcfc 10%, #f6f6f6 18%, #fcfcfc 33%);
+    background-size: 800px 104px;
+    position: relative;
+}

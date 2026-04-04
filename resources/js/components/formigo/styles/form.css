@@ -1,0 +1,69 @@
+@reference "~/css/app.css";
+
+form {
+    @apply text-gray-600;
+}
+
+form .option-label {
+    @apply text-gray-500;
+}
+
+form em.form-hint {
+    @apply ml-1 text-[0.6rem] font-normal text-gray-400 not-italic;
+}
+
+form .section-legend {
+    @apply mb-6 text-sm leading-normal font-medium tracking-widest text-gray-400 uppercase;
+}
+
+form .group-legend {
+    @apply text-xs leading-normal font-medium text-gray-500;
+}
+
+/**
+ * Form elements
+ */
+form .form-element {
+    @apply mb-4 text-sm;
+}
+
+form input {
+    @apply text-base text-gray-600;
+}
+
+form textarea {
+    @apply text-base text-gray-600;
+}
+
+form .gui-draft-js-text-area {
+    @apply text-base text-gray-600;
+}
+
+form .form-element,
+form .form-message {
+    @apply text-base leading-none;
+}
+
+/**
+ * Form section
+ */
+form .form-section {
+    @apply mb-4;
+    /* no chrome, o default para o fieldset é min-width: -webkit-min-content;
+       isso impede a quebra de linha contínua no draft-js, por exemplo */
+    @apply min-w-auto;
+    /* tira a diferença de 16px do margin-bottom setado no form-element */
+    @apply pb-6 max-sm:pb-0;
+}
+
+form .form-section .gui-draft-js-text-area a,
+form .form-section .gui-draft-js-text-area button {
+    @apply leading-tight;
+}
+
+/**
+ * Form section
+ */
+form .form-group {
+    @apply border-t border-solid border-gray-100 pt-2;
+}

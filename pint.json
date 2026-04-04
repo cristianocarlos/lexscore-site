@@ -1,0 +1,24 @@
+{
+    "preset": "laravel",
+    "rules": {
+        "blank_line_before_statement": false,
+        "class_attributes_separation": {
+            "elements": {
+                "const": "none",
+                "property": "none",
+                "method": "one"
+            }
+        },
+        "concat_space": {
+            "spacing": "one"
+        },
+        "control_structure_braces": false,
+        "curly_braces_position": {
+            "functions_opening_brace": "same_line"
+        },
+        "heredoc_to_nowdoc": false,
+        "not_operator_with_space": false,
+        "not_operator_with_successor_space": false
+    },
+    "exclude": ["bootstrap/cache", "storage", "node_modules", "vendor"]
+}

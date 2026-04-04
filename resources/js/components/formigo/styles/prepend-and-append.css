@@ -1,0 +1,18 @@
+@reference "~/css/app.css";
+
+.mf__formigo__prepend-and-append {
+    @apply z-prepend-and-append agg--form-transition-all absolute inline-flex items-center justify-center;
+}
+
+.mf__formigo__prepend-and-append.append {
+    @apply top-0 right-0 h-full rounded-r-sm;
+}
+
+.mf__formigo__prepend-and-append.append > button,
+.mf__formigo__prepend-and-append.append > label {
+    @apply text-form-color-theme;
+}
+
+.mf__formigo__prepend-and-append.prepend {
+    @apply top-0 left-0 h-full rounded-l-sm text-gray-400;
+}

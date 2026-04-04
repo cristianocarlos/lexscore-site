@@ -1,0 +1,70 @@
+@reference "~/css/app.css";
+
+.mf__formigo__check-switch .option.switch > .checkable {
+    @apply inline-flex items-center;
+}
+
+.mf__formigo__check-switch .option.switch > .checkable .custom {
+    @apply relative mr-2 inline-block h-[1.4rem] w-[2.4rem] cursor-pointer;
+}
+
+.mf__formigo__check-switch.print-mode,
+.mf__formigo__check-switch.print-mode .option.switch > .checkable .custom {
+    @apply h-[0.88rem];
+}
+
+.mf__formigo__check-switch .option.switch > .checkable .custom:before,
+.mf__formigo__check-switch .option.switch > .checkable .custom:after {
+    transform: translate(0, -50%);
+    transition: all 0.2s ease;
+}
+
+.mf__formigo__check-switch .option.switch > .checkable .custom {
+    @apply before:content-[''];
+    @apply before:m-0;
+    @apply before:outline-none;
+    @apply before:absolute;
+    @apply before:top-1/2;
+    @apply before:bg-gray-300;
+    @apply before:h-[0.8rem];
+    @apply before:w-[2.3rem];
+    @apply before:rounded-full;
+    @apply after:content-[''];
+    @apply after:m-0;
+    @apply after:outline-none;
+    @apply after:absolute;
+    @apply after:top-1/2;
+    @apply after:bg-gray-50;
+    @apply after:rounded-full;
+    @apply after:h-[1.2rem];
+    @apply after:w-[1.2rem];
+}
+
+.mf__formigo__check-switch .option.switch > .checkable .custom:after {
+    box-shadow:
+        0 2px 2px 0 rgba(0, 0, 0, 0.14),
+        0 3px 1px -2px rgba(0, 0, 0, 0.2),
+        0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.mf__formigo__check-switch .option.switch > .checkable input {
+    @apply absolute opacity-0;
+}
+
+.mf__formigo__check-switch .option.switch > .checkable input:focus + .custom:before {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+}
+
+.mf__formigo__check-switch .option.switch > .checkable input:checked + .custom:before {
+    @apply bg-form-color-theme;
+    @apply opacity-50;
+}
+
+.mf__formigo__check-switch .option.switch > .checkable input:checked + .custom:after {
+    @apply bg-form-color-theme;
+    transform: translate(90%, -50%);
+}
+
+.mf__formigo__check-switch .option.switch > .checkable input[disabled] ~ * {
+    @apply opacity-50;
+}
