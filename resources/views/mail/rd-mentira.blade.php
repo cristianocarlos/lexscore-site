@@ -1,3 +1,6 @@
+<?php
+    $rows = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,9 +11,23 @@
   <body>
     Olá,
     <br /><br />
-    <a href="{{$link}}" class="block bg-amber-300" target="_blank">
-        Responda
-    </a>
+    Responda
+    <br /><br />
+    <table style="border-collapse: collapse">
+        <tr>
+            @foreach ($rows as $value)
+                <td style="background-color: red; text-align: center; border: solid 1px white">
+                    <a
+                        style="color: white; text-decoration: none; display: block; width: 32px; line-height: 32px"
+                        href="{{$link}}?v={{$value}}"
+                        target="_blank"
+                    >
+                        {{ $value }}
+                    </a>
+                </td>
+            @endforeach
+        </tr>
+    </table>
     <br /><br />
     Atenciosamente,<br />
     {{ config('mail.from.name') }}
