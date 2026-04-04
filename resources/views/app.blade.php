@@ -8,5 +8,7 @@
     </head>
     <body>
         <x-inertia::app />
+        <div id="feedback"></div>
+        <div id="modal"></div>
     </body>
 </html>
