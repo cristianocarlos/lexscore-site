@@ -2,6 +2,7 @@ import Layout from '@/layout/Layout';
 import axiosAppApi from '@/utils/xhr/axiosAppApi';
 
 import type {TButtonMouseEvent} from '@/types/common';
+import Nav from '@/pages/Nav';
 
 type TProps = {
   rows: Array<{
@@ -29,6 +30,7 @@ export default ({rows}: TProps) => {
   return (
     <Layout>
       <Layout.Content className="flex flex-col gap-8 mt-8">
+        <Nav/>
         <ul>
           {flatRows.map((data) => {
             return <li key={data.id}>{data.email}</li>;
