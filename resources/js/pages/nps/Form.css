@@ -1,0 +1,23 @@
+@reference "~/css/app.css";
+
+@scope (.nps-form) {
+    .agg--form-input-label {
+        @apply text-lg font-normal mb-1;
+    }
+
+    .option-label {
+        @apply flex items-center justify-center text-lg size-12;
+    }
+    h3 {
+        @apply text-xl font-semibold bg-gray-100 mb-4 mt-8;
+    }
+
+    h4 {
+        @apply uppercase font-semibold leading-loose mb-4;
+    }
+
+    textarea {
+        @apply h-20!;
+    }
+}
+
