@@ -36,12 +36,13 @@ function Form() {
   return (
     <Formigo action="/api/nps/send" className="nps-form">
       <Formigo.Section>
-        <header className="mb-8 text-2xl font-bold mb-8">
-          Penal
-        </header>
+        <header className="mb-8 text-2xl font-bold mb-8">Penal</header>
 
         <div className="agg--form-row">
-          <TextInput attribute={YiiModel.attr('RespondentMailingList.reml_pers_name')} label={YiiLang.misc('textName')} />
+          <TextInput
+            attribute={YiiModel.attr('RespondentMailingList.reml_pers_name')}
+            label={YiiLang.misc('textName')}
+          />
           <TextInput
             attribute={YiiModel.attr('RespondentMailingList.reml_pers_joti')}
             label={YiiLang.misc('textJobTitle')}
@@ -51,29 +52,37 @@ function Form() {
           attribute={YiiModel.attr('RespondentMailingList.reml_comp_name')}
           label={YiiLang.misc('textCompany')}
         />
+        <RadioGroup
+          attribute={['Answer', 'answ_ques', '902']}
+          label={'Tempo de relacionamento'}
+          options={[
+            {id: 1, label: 'Menos de 1 ano'},
+            {id: 2, label: '1 a 3 anos'},
+            {id: 3, label: 'Mais de 3 anos'},
+          ]}
+        />
         <h3 className="text-transparent">{'.'}</h3>
         <RadioGroup
           attribute={['Answer', 'answ_ques', '5']}
+          className="score"
           initValue={parsedQs.v}
           label="Em uma escala de 0 a 10, o quanto você recomendaria nosso escritório a um colega ou a outro executivo?"
           options={options}
           pattern="filled"
         />
-        <TextArea
-          attribute={['Answer', 'answ_ques', '6']}
-          label="Por favor, conte o principal motivo para essa nota"
-        />
+        <TextArea attribute={['Answer', 'answ_ques', '6']} label="Por favor, conte o principal motivo para essa nota" />
         <h3>{s3.title}</h3>
         {s3.options.map((data) => {
           return (
             <RadioGroup
               attribute={['Answer', 'answ_ques', data.id.toString()]}
+              className="score"
               key={data.id}
               label={data.label}
               options={options}
               pattern="filled"
             />
-          )
+          );
         })}
         <h3>{s4.title}</h3>
         {s4.subs.map((subData, index) => {
@@ -84,16 +93,29 @@ function Form() {
                 return (
                   <RadioGroup
                     attribute={['Answer', 'answ_ques', data.id.toString()]}
+                    className="score"
                     key={data.id}
                     label={data.label}
                     options={options}
                     pattern="filled"
                   />
-                )
+                );
               })}
             </div>
-          )
+          );
         })}
+        <div>
+          <h4>{'Validação da relação'}</h4>
+          <RadioGroup
+            attribute={['Answer', 'answ_ques', '901']}
+            label={'O escritório é sua principal referência para este tipo de serviço?'}
+            options={[
+              {id: 1, label: 'Sim'},
+              {id: 2, label: 'Não'},
+              {id: 3, label: 'Depende do caso'},
+            ]}
+          />
+        </div>
       </Formigo.Section>
       <Formigo.ButtonSet>
         <FormigoSnippet.SubmitButton onClick={handleSubmit}>{YiiLang.misc('textSend')}</FormigoSnippet.SubmitButton>

@@ -5,7 +5,7 @@
         @apply text-lg font-normal mb-1;
     }
 
-    .option-label {
+    .score .option-label {
         @apply flex items-center justify-center text-lg size-12;
     }
     h3 {
