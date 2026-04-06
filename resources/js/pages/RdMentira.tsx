@@ -27,7 +27,10 @@ export default ({rows}: TProps) => {
   };
 
   return (
-    <Layout>
+    <Layout hideHeader={true}>
+      <h1 className="bg-pink-500 flex basis-full items-center flex-col">
+        <div className="text-white text-6xl font-bold">RD Mentirinha</div>
+      </h1>
       <Layout.Content className="flex flex-col gap-8 mt-8">
         <ul>
           {flatRows.map((data) => {
