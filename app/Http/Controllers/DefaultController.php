@@ -18,9 +18,8 @@ class DefaultController
     }
 
     public function npsForm(RespondentMailingList $model): Response {
-        $withRelationsModel = $model->with('respondentRelation')->first();
         return inertia('nps/Reply', [
-            'formFeatures' => $withRelationsModel->formFeaturesLoad(),
+            'formFeatures' => $model->with('respondentRelation')->first()->formFeaturesLoad(),
             'metaData' => new MetaDataResource($model),
         ]);
     }

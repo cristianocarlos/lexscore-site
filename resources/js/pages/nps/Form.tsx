@@ -10,11 +10,14 @@ import FormigoSnippet from '@/components/formigo/snippet/FormigoSnippet';
 import SubmitDecorator, {useHandleFetchSubmit} from '@/components/formigo/SubmitDecorator';
 import {getSection3Questions, getSection4Questions} from '@/pages/nps/questions';
 import {getSequenceOptions} from '@/utils/helper';
+import {queryStringParse} from '@/utils/queryString';
 
 import type {TButtonMouseEventHandler} from '@/types/common';
 
 function Form() {
   const [success, setSuccess] = useState(false);
+
+  const parsedQs = queryStringParse(window.location.search);
 
   const handleFetchSubmit = useHandleFetchSubmit();
 
@@ -33,20 +36,25 @@ function Form() {
   return (
     <Formigo action="/api/nps/send" className="nps-form">
       <Formigo.Section>
-        <header className="mb-8">
-          Especialidade
+        <header className="mb-8 text-2xl font-bold mb-8">
+          Penal
         </header>
-        <TextInput attribute={YiiModel.attr('RespondentMailingList.reml_pers_name')} label={YiiLang.misc('textName')} />
-        <TextInput
-          attribute={YiiModel.attr('RespondentMailingList.reml_pers_joti')}
-          label={YiiLang.misc('textJobTitle')}
-        />
+
+        <div className="agg--form-row">
+          <TextInput attribute={YiiModel.attr('RespondentMailingList.reml_pers_name')} label={YiiLang.misc('textName')} />
+          <TextInput
+            attribute={YiiModel.attr('RespondentMailingList.reml_pers_joti')}
+            label={YiiLang.misc('textJobTitle')}
+          />
+        </div>
         <TextInput
           attribute={YiiModel.attr('RespondentMailingList.reml_comp_name')}
           label={YiiLang.misc('textCompany')}
         />
+        <h3 className="text-transparent">{'.'}</h3>
         <RadioGroup
           attribute={['Answer', 'answ_ques', '5']}
+          initValue={parsedQs.v}
           label="Em uma escala de 0 a 10, o quanto você recomendaria nosso escritório a um colega ou a outro executivo?"
           options={options}
           pattern="filled"
