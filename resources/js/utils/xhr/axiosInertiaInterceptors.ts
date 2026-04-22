@@ -8,7 +8,7 @@ export default (instance: AxiosInstance) => {
     },
     async (error) => {
       console.log(111, 'response.error', error);
-      return Promise.reject(error)
+      return Promise.reject(error);
     },
   );
 
@@ -19,7 +19,7 @@ export default (instance: AxiosInstance) => {
     },
     async (error) => {
       console.log(222, 'response.error', error);
-      return Promise.reject(error)
+      return Promise.reject(error);
     },
   );
   return instance;

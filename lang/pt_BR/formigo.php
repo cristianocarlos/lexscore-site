@@ -53,6 +53,8 @@ return [
     'labelFormPhoneGroupRestrict' => 'Restrito',
     'labelFormPhoneGroupType' => 'Tipo',
     'labelFormPhoneGroupWhatsapp' => 'Whatsapp',
+    'labelFormRateVeryBad' => 'Muito ruim',
+    'labelFormRateVeryGood' => 'Muito bom',
     'labelFormSubmitButton' => 'Salvar',
     'labelFormTextAreaCounter' => 'Caracteres restantes',
     'placeholderFormAddressBrazilComplement' => 'Apartamento, bloco, edifício, andar, ...',

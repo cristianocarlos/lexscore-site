@@ -8,6 +8,7 @@ import {useState} from 'react';
 import Formigo, {RadioGroup, TextArea, TextInput} from '@/components/formigo/Formigo';
 import FormigoSnippet from '@/components/formigo/snippet/FormigoSnippet';
 import SubmitDecorator, {useHandleFetchSubmit} from '@/components/formigo/SubmitDecorator';
+import NpsRating from '@/pages/nps/NpsRating';
 import {getSection3Questions, getSection4Questions} from '@/pages/nps/questions';
 import {getSequenceOptions} from '@/utils/helper';
 import {queryStringParse} from '@/utils/queryString';
@@ -62,25 +63,23 @@ function Form() {
           ]}
         />
         <h3 className="text-transparent">{'.'}</h3>
-        <RadioGroup
+        <NpsRating
           attribute={['Answer', 'answ_ques', '5']}
           className="score"
           initValue={parsedQs.v}
           label="Em uma escala de 0 a 10, o quanto você recomendaria nosso escritório a um colega ou a outro executivo?"
           options={options}
-          pattern="filled"
         />
         <TextArea attribute={['Answer', 'answ_ques', '6']} label="Por favor, conte o principal motivo para essa nota" />
         <h3>{s3.title}</h3>
         {s3.options.map((data) => {
           return (
-            <RadioGroup
+            <NpsRating
               attribute={['Answer', 'answ_ques', data.id.toString()]}
               className="score"
               key={data.id}
               label={data.label}
               options={options}
-              pattern="filled"
             />
           );
         })}
@@ -91,13 +90,11 @@ function Form() {
               <h4>{subData.title}</h4>
               {subData.options.map((data) => {
                 return (
-                  <RadioGroup
+                  <NpsRating
                     attribute={['Answer', 'answ_ques', data.id.toString()]}
-                    className="score"
                     key={data.id}
                     label={data.label}
                     options={options}
-                    pattern="filled"
                   />
                 );
               })}

@@ -5,11 +5,8 @@
         @apply text-lg font-normal mb-1;
     }
 
-    .score .option-label {
-        @apply flex items-center justify-center text-lg size-12;
-    }
     h3 {
-        @apply text-xl font-semibold bg-gray-100 mb-4 mt-8;
+        @apply text-xl font-semibold mb-4 mt-8;
     }
 
     h4 {
@@ -19,5 +16,19 @@
     textarea {
         @apply h-20!;
     }
-}
 
+    fieldset {
+        @apply bg-[#1E3D79]/60!;
+    }
+
+    h3,
+    h4,
+    .mf__formigo__check-and-radio .option-label,
+    .agg--form-input-label {
+        @apply text-white!;
+    }
+
+    input {
+        @apply border-0!;
+    }
+}

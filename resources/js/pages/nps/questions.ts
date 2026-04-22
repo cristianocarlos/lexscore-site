@@ -3,7 +3,10 @@ const section3Questions = {
     {id: 7, label: 'Como avalia a comunicação geral do escritório?'},
     {id: 8, label: 'Como avalia a transparência em relação a prazos e honorários?'},
     {id: 9, label: 'Como avalia a facilidade para falar com um sócio ou gestor, quando necessário? '},
-    {id: 10, label: 'Em uma escala de 0 a 10, como você avalia o custo-benefício dos serviços prestados pelo escritório?'},
+    {
+      id: 10,
+      label: 'Em uma escala de 0 a 10, como você avalia o custo-benefício dos serviços prestados pelo escritório?',
+    },
   ],
   title: 'Avaliação do escritório',
 };
@@ -48,12 +51,7 @@ export function getSection3Questions() {
 
 export function getSection4Questions() {
   return {
-    subs: [
-      section4SubAQuestions,
-      section4SubBQuestions,
-      section4SubCQuestions,
-      section4SubDQuestions,
-    ],
+    subs: [section4SubAQuestions, section4SubBQuestions, section4SubCQuestions, section4SubDQuestions],
     title: 'Avaliação da área',
-  }
+  };
 }
