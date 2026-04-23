@@ -3,10 +3,10 @@ import './Form.css';
 import Rating from '@/components/formigo/rating/Rating';
 
 import type {TCheckGroupOrRadioGroupOptionRows} from '@/components/formigo/types/checkGroupOrRadioGroup';
-import type {TRateProps} from '@/components/formigo/types/rate';
+import type {TRatingProps} from '@/components/formigo/types/rating';
 
 export default function NpsRating<GOptionData extends TCheckGroupOrRadioGroupOptionRows[number]>(
-  props: TRateProps<GOptionData>,
+  props: TRatingProps<GOptionData>,
 ) {
   return (
     <Rating {...props} className={`nps-rating ${props.className}`}>

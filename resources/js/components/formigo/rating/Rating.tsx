@@ -16,13 +16,13 @@ import {useDidMountEffect} from '@/utils/hooks';
 import useRadioGroupHandlers from '../radio-group/useRadioGroupHandlers';
 
 import type {TCheckGroupOrRadioGroupOptionRows} from '@/components/formigo/types/checkGroupOrRadioGroup';
-import type {TRateProps} from '@/components/formigo/types/rate';
+import type {TRatingProps} from '@/components/formigo/types/rating';
 
 Rating.Options = RatingOptions;
 Rating.Guide = RatingGuide;
 
 export default function Rating<GOptionData extends TCheckGroupOrRadioGroupOptionRows[number]>(
-  props: TRateProps<GOptionData>,
+  props: TRatingProps<GOptionData>,
 ) {
   const {
     attribute,
@@ -115,7 +115,7 @@ export default function Rating<GOptionData extends TCheckGroupOrRadioGroupOption
         handleInputChange,
         handleInputClick,
         inputId: initProps.id,
-        inputName: typeof readOnlyOrNoValueHiddenElement === 'undefined' ? initProps.name : undefined,
+        inputName: typeof readOnlyOrNoValueHiddenElement === 'undefined' ? initProps.name : undefined, // quando existir o hidden o Check não pode ter name [da pau no node]
         inputValue: resolvedInputValue,
         refHtmlOptionList,
       }}
@@ -123,9 +123,7 @@ export default function Rating<GOptionData extends TCheckGroupOrRadioGroupOption
       <FieldWrapper attribute={attribute} className={`mf__formigo__rate ${className}`} role="radiogroup">
         <label className="agg--form-input-label">{label}</label>
         {readOnlyOrNoValueHiddenElement}
-        {children ? (
-          children
-        ) : (
+        {children || (
           <>
             <Rating.Options />
             <Rating.Guide />

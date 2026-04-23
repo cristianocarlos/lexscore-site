@@ -61,22 +61,3 @@ export type IPCheckGroup<GOptionData = TCheckGroupOrRadioGroupOptionRows[number]
     refComponent?: RefObject<TCheckGroupRefComponent | undefined>; // Expõe algumas funções do componente para uso externo
     valuesAttribute?: TFormigoAttribute; // Flat values via hidden json (ex.: query strings de busca)
   };
-
-/**
- *
- */
-
-export type TRadioCheckValue = string;
-
-export type TRadioGroupRefComponent = TFormigoRefComponent & {
-  replaceValue: (value?: TRadioCheckValue) => void;
-};
-
-export type IPRadioGroup<GOptionData = TCheckGroupOrRadioGroupOptionRows[number]> = IPCheckGroupOrRadioGroupBase &
-  IPCheckGroupOrRadioGroupOptions<GOptionData> & {
-    handleChange?: (value?: TRadioCheckValue) => void; // handleChange adicional
-    initValue?: TRadioCheckValue; // Valor inicial
-    preventUncheck?: boolean; // Previne que seja desmarcado
-    refComponent?: RefObject<TRadioGroupRefComponent | undefined>; // Expõe algumas funções do componente para uso externo
-    title?: string;
-  };

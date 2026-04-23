@@ -1,9 +1,10 @@
-import {createContext, type RefObject, useContext} from 'react';
+import {createContext, useContext} from 'react';
 
-import type {TRateProps} from '@/components/formigo/types/rate';
+import type {TRatingProps} from '@/components/formigo/types/rating';
 import type {TInputChangeEventHandler, TInputMouseEventHandler} from '@/types/common';
+import type {RefObject} from 'react';
 
-type TRatingContext = TRateProps & {
+type TRatingContext = TRatingProps & {
   handleInputChange: TInputChangeEventHandler;
   handleInputClick: TInputMouseEventHandler;
   inputId?: string;
@@ -17,7 +18,7 @@ export const RatingContext = createContext<TRatingContext | undefined>(undefined
 export function useRatingContext() {
   const context = useContext(RatingContext);
   if (!context) {
-    throw Error('RatingContext must be used within a Dromigo');
+    throw Error('RatingContext must be used within a Rating');
   }
   return context;
 }
