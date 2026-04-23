@@ -60,6 +60,7 @@ return [
     'placeholderFormAddressBrazilComplement' => 'Apartamento, bloco, edifício, andar, ...',
     'placeholderFormAddressBrazilLine1' => 'Rua, avenida, praça, ...',
     'placeholderFormPhoneInputDialingCodePicker' => 'Selecione o DDI',
+    'placeholderQuickSearch' => 'Busca rápida',
     'textFormAddressManualFillInfo' => 'Endereço não encontrado, por favor preencha os campos manualmente',
     'textFormDeleteConfirmAsk' => 'Tem certeza que deseja excluir este registro?',
     'textFormDeleteConfirmTitle' => 'Confirmação de exclusão',
